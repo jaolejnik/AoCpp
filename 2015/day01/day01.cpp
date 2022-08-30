@@ -1,12 +1,10 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
-string get_input_string(const char *filename)
+std::string get_input_string(const char *filename)
 {
-    string line;
-    ifstream myfile(filename);
+    std::string line;
+    std::ifstream myfile(filename);
 
     if (myfile.is_open())
         getline(myfile, line);
@@ -16,7 +14,7 @@ string get_input_string(const char *filename)
     return line;
 }
 
-int part1(string input)
+int part1(std::string input)
 {
     int level = 0;
 
@@ -26,7 +24,7 @@ int part1(string input)
     return level;
 }
 
-int part2(string input)
+int part2(std::string input)
 {
     int level = 0;
     int instruction = 1;
@@ -46,9 +44,9 @@ int part2(string input)
 
 int main()
 {
-    string puzzle_input = get_input_string("input");
-    cout << part1(puzzle_input) << endl;
-    cout << part2(puzzle_input) << endl;
+    std::string puzzle_input = get_input_string("input");
+    std::cout << part1(puzzle_input) << std::endl;
+    std::cout << part2(puzzle_input) << std::endl;
 
     return 0;
 }
