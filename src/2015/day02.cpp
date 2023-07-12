@@ -1,5 +1,6 @@
+#include "../utils/io.h"
+
 #include <iostream>
-#include <fstream>
 #include <sstream>
 #include <vector>
 #include <bits/stdc++.h>
@@ -97,7 +98,7 @@ int part2(const std::vector<std::vector<int>> &data)
 
 int main()
 {
-    auto data = parse_input("input/2015/day02.in");
+    auto data = parse_input(get_input_path(__FILE__));
 
     std::cout << "Part 1: " << part1(data) << std::endl;
     std::cout << "Part 2: " << part2(data) << std::endl;

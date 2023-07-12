@@ -1,5 +1,6 @@
+#include "../utils/io.h"
+
 #include <iostream>
-#include <fstream>
 #include <iomanip>
 #include <sstream>
 #include <openssl/md5.h>
@@ -68,10 +69,10 @@ int part2(const std::string &key)
 
 int main()
 {
-    std::string key = get_input_string("input/2015/day04.in");
+    std::string input = read_input_single_string(__FILE__);
 
-    std::cout << "Part 1: " << part1(key) << std::endl;
-    std::cout << "Part 2: " << part2(key) << std::endl;
+    std::cout << "Part 1: " << part1(input) << std::endl;
+    std::cout << "Part 2: " << part2(input) << std::endl;
 
     return 0;
 }

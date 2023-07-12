@@ -1,21 +1,8 @@
+#include "../utils/io.h"
+
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include <unordered_map>
-#include <string>
-
-std::string get_input_string(const std::string &filename)
-{
-    std::string line;
-    std::ifstream myfile(filename);
-
-    if (myfile.is_open())
-        std::getline(myfile, line);
-
-    myfile.close();
-
-    return line;
-}
 
 void move(const char instruction, int position[])
 {
@@ -94,10 +81,10 @@ int part2(const std::string &instructions)
 
 int main()
 {
-    std::string instructions = get_input_string("input/2015/day03.in");
+    std::string input = read_input_single_string(__FILE__);
 
-    std::cout << "Part 1: " << part1(instructions) << std::endl;
-    std::cout << "Part 2: " << part2(instructions) << std::endl;
+    std::cout << "Part 1: " << part1(input) << std::endl;
+    std::cout << "Part 2: " << part2(input) << std::endl;
 
     return 0;
 }

@@ -1,18 +1,6 @@
+#include "../utils/io.h"
+
 #include <iostream>
-#include <fstream>
-
-std::string get_input_string(const char *filename)
-{
-    std::string line;
-    std::ifstream myfile(filename);
-
-    if (myfile.is_open())
-        std::getline(myfile, line);
-
-    myfile.close();
-
-    return line;
-}
 
 int part1(const std::string &input)
 {
@@ -44,10 +32,10 @@ int part2(const std::string &input)
 
 int main()
 {
-    std::string puzzle_input = get_input_string("input/2015/day01.in");
+    std::string input = read_input_single_string(__FILE__);
 
-    std::cout << "Part 1: " << part1(puzzle_input) << std::endl;
-    std::cout << "Part 2: " << part2(puzzle_input) << std::endl;
+    std::cout << "Part 1: " << part1(input) << "\n";
+    std::cout << "Part 2: " << part2(input) << "\n";
 
     return 0;
 }

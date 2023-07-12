@@ -8,5 +8,5 @@ binpath="bin/${year_day_path}"
 
 mkdir -p "bin/$year"
 
-g++ -std=c++2a -Wall "src/${year_day_path}.cpp" -o $binpath $extra_flags
+g++ -std=c++20 -Wall "src/${year_day_path}.cpp" -o $binpath $extra_flags
 eval "./${binpath}"
