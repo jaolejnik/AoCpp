@@ -7,29 +7,29 @@ std::string get_input_string(const char *filename)
     std::ifstream myfile(filename);
 
     if (myfile.is_open())
-        getline(myfile, line);
+        std::getline(myfile, line);
 
     myfile.close();
 
     return line;
 }
 
-int part1(std::string input)
+int part1(const std::string &input)
 {
     int level = 0;
 
-    for (char const &c : input)
+    for (const char &c : input)
         level += c == '(' ? 1 : -1;
 
     return level;
 }
 
-int part2(std::string input)
+int part2(const std::string &input)
 {
     int level = 0;
     int instruction = 1;
 
-    for (char const &c : input)
+    for (const char &c : input)
     {
         level += c == '(' ? 1 : -1;
 
@@ -44,9 +44,10 @@ int part2(std::string input)
 
 int main()
 {
-    std::string puzzle_input = get_input_string("input");
-    std::cout << part1(puzzle_input) << std::endl;
-    std::cout << part2(puzzle_input) << std::endl;
+    std::string puzzle_input = get_input_string("input/2015/day01.in");
+
+    std::cout << "Part 1: " << part1(puzzle_input) << std::endl;
+    std::cout << "Part 2: " << part2(puzzle_input) << std::endl;
 
     return 0;
 }

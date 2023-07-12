@@ -4,20 +4,20 @@
 #include <unordered_map>
 #include <string>
 
-std::string get_input_string(const char *filename)
+std::string get_input_string(const std::string &filename)
 {
     std::string line;
     std::ifstream myfile(filename);
 
     if (myfile.is_open())
-        getline(myfile, line);
+        std::getline(myfile, line);
 
     myfile.close();
 
     return line;
 }
 
-void move(char const &instruction, int position[])
+void move(const char instruction, int position[])
 {
     switch (instruction)
     {
@@ -36,7 +36,7 @@ void move(char const &instruction, int position[])
     }
 }
 
-int part1(std::string instructions)
+int part1(const std::string &instructions)
 {
     int position[2] = {0, 0};
     std::unordered_map<std::string, int> visited_positions;
@@ -57,7 +57,7 @@ int part1(std::string instructions)
     return visited_positions.size();
 }
 
-int part2(std::string instructions)
+int part2(const std::string &instructions)
 {
     int turn = 0;
     int santa_position[2] = {0, 0};
@@ -94,10 +94,10 @@ int part2(std::string instructions)
 
 int main()
 {
-    std::string instructions = get_input_string("input");
+    std::string instructions = get_input_string("input/2015/day03.in");
 
-    std::cout << part1(instructions) << std::endl;
-    std::cout << part2(instructions) << std::endl;
+    std::cout << "Part 1: " << part1(instructions) << std::endl;
+    std::cout << "Part 2: " << part2(instructions) << std::endl;
 
     return 0;
 }

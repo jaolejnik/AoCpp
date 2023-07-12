@@ -4,7 +4,7 @@
 #include <vector>
 #include <bits/stdc++.h>
 
-std::vector<std::vector<int>> parse_input(const char *filename)
+std::vector<std::vector<int>> parse_input(const std::string &filename)
 {
     std::vector<std::vector<int>> parsed_data;
     std::string line;
@@ -13,13 +13,13 @@ std::vector<std::vector<int>> parse_input(const char *filename)
     if (!inputfile.is_open())
         return parsed_data;
 
-    while (getline(inputfile, line))
+    while (std::getline(inputfile, line))
     {
         std::stringstream line_ss(line);
         std::string segment;
         std::vector<int> values;
 
-        while (getline(line_ss, segment, 'x'))
+        while (std::getline(line_ss, segment, 'x'))
             values.push_back(std::stoi(segment));
 
         std::sort(values.begin(), values.end());
@@ -31,18 +31,19 @@ std::vector<std::vector<int>> parse_input(const char *filename)
     return parsed_data;
 }
 
-std::vector<std::vector<int>> calculate_dimensions(std::vector<std::vector<int>> data)
+std::vector<std::vector<int>> calculate_dimensions(const std::vector<std::vector<int>> &data)
 {
     std::vector<std::vector<int>> dimensions;
 
     for (auto &entry : data)
     {
         std::vector<int> sides;
+        int size = entry.size();
 
-        for (int i = 0; i < entry.size() - 1; i++)
+        for (int i = 0; i < size - 1; i++)
         {
             int j = i + 1;
-            while (j < entry.size())
+            while (j < size)
             {
                 sides.push_back(entry[i] * entry[j]);
                 j++;
@@ -55,7 +56,7 @@ std::vector<std::vector<int>> calculate_dimensions(std::vector<std::vector<int>>
     return dimensions;
 }
 
-int calculate_total_paper(std::vector<std::vector<int>> dimensions)
+int calculate_total_paper(const std::vector<std::vector<int>> &dimensions)
 {
     int sum = 0;
 
@@ -69,7 +70,7 @@ int calculate_total_paper(std::vector<std::vector<int>> dimensions)
     return sum;
 }
 
-int calculate_total_ribbon(std::vector<std::vector<int>> data)
+int calculate_total_ribbon(const std::vector<std::vector<int>> &data)
 {
     int sum = 0;
 
@@ -83,23 +84,23 @@ int calculate_total_ribbon(std::vector<std::vector<int>> data)
     return sum;
 }
 
-int part1(std::vector<std::vector<int>> data)
+int part1(const std::vector<std::vector<int>> &data)
 {
     std::vector<std::vector<int>> dimensions = calculate_dimensions(data);
     return calculate_total_paper(dimensions);
 }
 
-int part2(std::vector<std::vector<int>> data)
+int part2(const std::vector<std::vector<int>> &data)
 {
     return calculate_total_ribbon(data);
 }
 
 int main()
 {
-    std::vector<std::vector<int>> data = parse_input("input");
+    auto data = parse_input("input/2015/day02.in");
 
-    std::cout << part1(data) << std::endl;
-    std::cout << part2(data) << std::endl;
+    std::cout << "Part 1: " << part1(data) << std::endl;
+    std::cout << "Part 2: " << part2(data) << std::endl;
 
     return 0;
 }
