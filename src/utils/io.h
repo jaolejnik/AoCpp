@@ -8,6 +8,9 @@
 
 namespace fs = std::filesystem;
 
+typedef std::vector<std::string> StringVector;
+typedef std::vector<std::vector<std::string>> StringVector2D;
+
 std::string get_input_path(const std::string &current_file)
 {
     fs::path cpp_path = current_file;
@@ -32,12 +35,12 @@ std::string read_input_single_string(const std::string &current_file)
     return input_string;
 }
 
-std::vector<std::string> read_input_vector_string(const std::string &current_file)
+StringVector read_input_vector_string(const std::string &current_file)
 {
     std::string input_path = get_input_path(current_file);
     std::ifstream input_file(input_path);
     std::string line;
-    std::vector<std::string> input_strings;
+    StringVector input_strings;
 
     while (std::getline(input_file, line))
         input_strings.push_back(line);
@@ -45,12 +48,12 @@ std::vector<std::string> read_input_vector_string(const std::string &current_fil
     return input_strings;
 }
 
-std::vector<std::vector<std::string>> read_input_2D_vector_string(const std::string &current_file, const char separator)
+StringVector2D read_input_2D_vector_string(const std::string &current_file, const char separator)
 {
     std::string input_path = get_input_path(current_file);
     std::ifstream input_file(input_path);
     std::string line;
-    std::vector<std::vector<std::string>> data;
+    StringVector2D data;
 
     if (!input_file.is_open())
         return data;
@@ -59,7 +62,7 @@ std::vector<std::vector<std::string>> read_input_2D_vector_string(const std::str
     {
         std::stringstream line_ss(line);
         std::string segment;
-        std::vector<std::string> sv;
+        StringVector sv;
 
         while (std::getline(line_ss, segment, separator))
             sv.push_back(segment);

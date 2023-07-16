@@ -18,7 +18,7 @@ std::array<int, 2> range_str_to_int(const std::string &range_str)
     return range_int;
 }
 
-int part1(const std::vector<std::vector<std::string>> &instructions)
+int part1(const StringVector2D &instructions)
 {
     std::array<std::array<bool, 1000>, 1000> lights = {{0}};
     int lights_lit = 0;
@@ -51,7 +51,7 @@ int part1(const std::vector<std::vector<std::string>> &instructions)
     return lights_lit;
 }
 
-int part2(const std::vector<std::vector<std::string>> &instructions)
+int part2(const StringVector2D &instructions)
 {
     std::array<std::array<int, 1000>, 1000> lights = {{0}};
     int lights_brightness = 0;

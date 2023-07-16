@@ -3,7 +3,7 @@
 #include <iostream>
 #include <regex>
 
-int part1(const std::vector<std::string> &input)
+int part1(const StringVector &input)
 {
     int nice_count = 0;
     std::regex vowels_re("([aeiou].*){3,}");
@@ -21,7 +21,7 @@ int part1(const std::vector<std::string> &input)
     return nice_count;
 }
 
-int part2(const std::vector<std::string> &input)
+int part2(const StringVector &input)
 {
     int nice_count = 0;
     std::regex double_double_re("(..).*\\1");
