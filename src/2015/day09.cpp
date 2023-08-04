@@ -45,6 +45,7 @@ int main()
     for (const auto &city : city_map)
         cities.push_back(city.first);
 
+    std::sort(std::begin(cities), std::end(cities));
     do
     {
         int distance = route_total_distance(city_map, cities);
