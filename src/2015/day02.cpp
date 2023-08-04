@@ -3,7 +3,6 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-#include <bits/stdc++.h>
 
 std::vector<std::vector<int>> parse_input(const std::string &filename)
 {
