@@ -3,7 +3,7 @@
 
 | YEAR  | COMPLETED |             PROGRESS              |
 | :---: | :-------: | :-------------------------------: |
-| 2015  |   9/25    | ![](https://progress-bar.dev/36/) |
+| 2015  |   11/25    | ![](https://progress-bar.dev/44/) |
 | 2016  |   0/25    | ![](https://progress-bar.dev/0/)  |
 | 2017  |   0/25    | ![](https://progress-bar.dev/0/)  |
 | 2018  |   0/25    | ![](https://progress-bar.dev/0/)  |

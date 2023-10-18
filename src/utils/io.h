@@ -4,12 +4,11 @@
 #include <fstream>
 #include <filesystem>
 #include <vector>
-#include <ranges>
 
 namespace fs = std::filesystem;
 
-typedef std::vector<std::string> StringVector;
-typedef std::vector<std::vector<std::string>> StringVector2D;
+using StringVector = std::vector<std::string>;
+using StringVector2D = std::vector<std::vector<std::string>>;
 
 std::string get_input_path(const std::string &current_file)
 {
