@@ -1,0 +1,16 @@
+﻿---
+Language: Cpp
+BasedOnStyle: Microsoft
+
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveAssignments: true
+AllowAllArgumentsOnNextLine: true
+AllowAllConstructorInitializersOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortFunctionsOnASingleLine: All
+AllowShortLambdasOnASingleLine: All
+FixNamespaceComments: true
+BinPackArguments: false
+BinPackParameters: false
+SortIncludes: false
+...
